@@ -37,6 +37,10 @@ namespace layouts
                             Text = "Sliders y Pickers",
                             Command = navigationCommand,
                             CommandParameter = typeof(PickerSlider)
+                        },new TextCell {
+                            Text = "Listados",
+                            Command = navigationCommand,
+                            CommandParameter = typeof(Listas)
                         }
                     }
                 }

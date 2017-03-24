@@ -36,6 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Listas.cs" />
+    <Compile Include="ListViewDataModel.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="PickerSlider.cs" />
     <Compile Include="PrimeraLayout.cs" />

@@ -50,6 +50,48 @@ public class PickerSlider : ContentPage
                 valorPage.Text = tiempo.Time.ToString();
             }
         };
+        Stepper escalon = new Stepper
+        {
+            Minimum = 0,
+            Maximum = 10,
+            Increment = 1,
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.CenterAndExpand
+        };
+        escalon.ValueChanged += (sender, ev) =>
+        {
+            evento.Text = String.Format("El valor de" +
+                        "stepper es{0:F1}", ev.NewValue);
+            valorPage.Text = escalon.Value.ToString();
+        };
+        Slider deslizador = new Slider
+        {
+            Minimum = 0,
+            Maximum = 100,
+            Value = 50,
+            VerticalOptions= LayoutOptions.CenterAndExpand,
+            WidthRequest = 300
+        };
+        deslizador.ValueChanged += (sender, parametros) =>
+         {
+             evento.Text = String.Format("el slider es {0:F1}"
+                                   , parametros.NewValue);
+             valorPage.Text = deslizador.Value.ToString();
+         };
+
+        Switch sw = new Switch
+        {
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.CenterAndExpand
+
+        };
+        sw.Toggled += (sender, ev)=>{
+            evento.Text = String.Format("el switch "
+                                +"es {0}",ev.Value);
+            valorPage.Text = sw.IsToggled.ToString();
+        };
+
+
 
         this.Content = new StackLayout
         {
@@ -60,7 +102,10 @@ public class PickerSlider : ContentPage
                 evento,
                 selector,
                 fecha,
-                tiempo
+                tiempo,
+                escalon,
+                deslizador,
+                sw
             }
         };
 
